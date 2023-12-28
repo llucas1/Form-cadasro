@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <title>Fomulario de Cadastro</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <section class="header">
+            Novo cadastro
+        </section> 
+        <!-- Formulario de cadastro-->
+        <form id="form" class="form">
+            
+            <div class="form-content">
+                <label for="username"> Nome do usuário</label>
+                <input 
+                type="text" 
+                id="username" 
+                placeholder="digite o nome do usuárioo..."
+                />
+                <a> aqui vai a mensagem de erro</a>
+            </div>
+
+             
+            <div class="form-content">
+                <label for="email"> Digite seu e-mail</label>
+                <input 
+                type="email" 
+                id="email" 
+                placeholder="digite o seu email..."
+                />
+                <a> aqui vai a mensagem de erro</a>
+            </div>
+
+             
+            <div class="form-content">
+                <label for="password">digite sua senha</label>
+                <input 
+                type="password" 
+                id="password" 
+                placeholder="senha..."
+                />
+                <a> aqui vai a mensagem de erro</a>
+            </div>
+            
+             
+            <div class="form-content">
+                <label for="password-confirmation"> Nome do usuário</label>
+                <input 
+                type="password" 
+                id="password-confirmation" 
+                placeholder="confirme sua senha..."
+                />
+                <a> aqui vai a mensagem de erro</a>
+            </div>
+
+            <button type="submit"> Cadastrar</button>
+        </form>
+    </div>
+    
+    <script src="../js/index.js"></script>
+</body>
+</html>
