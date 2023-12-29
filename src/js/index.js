@@ -8,6 +8,9 @@ form.addEventListener("submit", (Event) =>{
     Event.preventDefault();
 
     checkInputusername();
+    checkInputemail();
+    checkInputPassword();
+    checkInputPassworConfirmation();
 })
 
 
@@ -25,7 +28,7 @@ function checkInputusername() {
 
 /*validação do email*/
 
-function email(){
+function checkInputemail(){
     const emailValue = email.value;
 
     if(emailValue === ""){
@@ -41,22 +44,27 @@ function checkInputPassword(){
     const passwordValue = password.value;
     if(passwordValue === ""){
         errorInput(password, "Senha obrigatório")
+    }else if (passwordValue.length < 8) {
+        
+        errorInput(password, "A senha precisa ter no mínimo 8 caracteres...")
     }else{
-        const formItem = email.parentElement;
+        const formItem = password.parentElement;
 
-        formItem.className = "form-content";
+        formItem.className = "form-content"
     }
 }
 
 //confimaação da senha
 function checkInputPassworConfirmation(){
+    const passwordValue = password.value;
     const passwordConfirmationValue = passwordConfirmation.value;
-    if (passwordConfirmationValue != passwordValue) {
-        errorInput(passwordConfirmationValue, " Senhas diferente da anterior")
+    if(passwordConfirmationValue === ""){
+        errorInput(passwordConfirmation, "Confirme sua senha")
+    }else if(passwordValue !== passwordConfirmationValue){
+        errorInput(passwordConfirmation, "As senhas precisam ser iguais...")
     }else{
         const formItem = passwordConfirmation.parentElement;
-
-        formItem.className = "form-contet";
+        formItem.className = "form-content";
     }
 }
 
