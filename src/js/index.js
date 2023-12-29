@@ -10,17 +10,19 @@ form.addEventListener("submit", (Event) =>{
     checkInputusername();
 })
 
-// validar se campo de nome esta preenchido
-function checkInputusername(){
+
+/* validação do email*/
+function checkInputusername() {
     const usernameValue = username.value;
 
-    if(usernameValue === ""){
-        inputError(username, "Nome do usuário obrigatório.")
-    }else{
+    if (usernameValue === "") {
+        inputError(username, "Nome do usuário obrigatório.");
+    } else {
         const formItem = username.parentElement;
         formItem.classList = "form-content";
     }
 }
+
 
 
 // informa menssagem de erro
