@@ -4,14 +4,11 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation")
 
-form.addEventListener("submit", (Event) =>{
-    Event.preventDefault();
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    checkInputusername();
-    checkInputemail();
-    checkInputPassword();
-    checkInputPassworConfirmation();
-})
+    checkForm();
+});
 
 
 /* validação do email*/
@@ -56,15 +53,36 @@ function checkInputPassword(){
 
 //confimaação da senha
 function checkInputPassworConfirmation(){
+
     const passwordValue = password.value;
     const passwordConfirmationValue = passwordConfirmation.value;
+
     if(passwordConfirmationValue === ""){
         errorInput(passwordConfirmation, "Confirme sua senha")
-    }else if(passwordValue !== passwordConfirmationValue){
+    }else if(passwordConfirmationValue !== passwordValue){
         errorInput(passwordConfirmation, "As senhas precisam ser iguais...")
     }else{
         const formItem = passwordConfirmation.parentElement;
         formItem.className = "form-content";
+    }
+}
+
+/*validação do formulario para saber se esta enviando corretamente*/
+function checkForm(){
+
+    checkInputusername();
+    checkInputemail();
+    checkInputPassword();
+    checkInputPassworConfirmation();
+
+    const formItems = form.querySelectorAll(".form-content");
+
+    const isValid = [...formItems].every((item) => {
+        return item.className === "form-content";
+    });
+
+    if(!isValid){
+        alert("cadastro efetuado com sucesso");
     }
 }
 
